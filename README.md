@@ -57,3 +57,4 @@ Para desplegar el proyecto en Vercel y cumplir con los requisitos de entrega:
 - **Base de datos:** Las migraciones de Prisma deben estar aplicadas en la base de datos de producción antes de usar la app. Puedes ejecutar `npx prisma migrate deploy` desde local con `DATABASE_URL` de producción.
 - **Secrets:** No subas `.env` al repositorio. Todas las variables sensibles se configuran solo en Vercel (y en local en tu `.env`).
 - **Entregables:** Según los criterios, debes proporcionar la URL del proyecto desplegado en Vercel y, si se indica, compartir acceso al repositorio y al `.env` (o a los valores necesarios) con los correos indicados en la prueba.
+# Prueba_Tecnica_Finaciera
