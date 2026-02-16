@@ -13,19 +13,45 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Rol {
+  ADMIN
+  USUARIO
+}
+
+enum TipoMovimiento {
+  INGRESO
+  EGRESO
+}
+
 model User {
   id            String    @id
   name          String
   email         String
   emailVerified Boolean
   image         String?
+  rol           Rol       @default(ADMIN)
+  telefono      String?
   createdAt     DateTime
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
+  movimientos   Movimiento[]
 
   @@unique([email])
   @@map("user")
+}
+
+model Movimiento {
+  id        String         @id @default(cuid())
+  concepto  String
+  monto     Decimal
+  fecha     DateTime
+  tipo      TipoMovimiento
+  usuarioId String
+  usuario   User           @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  createdAt DateTime       @updatedAt
+
+  @@map("movimiento")
 }
 
 model Session {

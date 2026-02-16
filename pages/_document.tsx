@@ -1,8 +1,10 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
 const Document = () => (
-  <Html lang='en'>
-    <Head />
+  <Html lang='es'>
+    <Head>
+      <title>Prueba_Financiera</title>
+    </Head>
     <body>
       <Main />
       <NextScript />
