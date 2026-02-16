@@ -31,7 +31,9 @@ const Sidebar = ({ esAdmin, userName }: SidebarProps) => {
       style={{ width: SIDEBAR_WIDTH }}
     >
       <div className='p-4 border-b border-border'>
-        <span className='font-bold text-lg text-foreground'>Prueba_Financiera</span>
+        <span className='font-bold text-lg text-foreground'>
+          Prueba_Financiera
+        </span>
       </div>
       <nav className='flex-1 p-3 space-y-1'>
         <Link href='/' className={linkClass('/')}>

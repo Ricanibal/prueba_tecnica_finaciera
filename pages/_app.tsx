@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ThemeProvider } from 'next-themes';
 import Layout from '@/components/Layout';
@@ -9,19 +10,24 @@ const App = ({ Component, pageProps }: AppProps) => {
   const isLoginPage = router.pathname === '/login';
 
   return (
-    <ThemeProvider
-      attribute='class'
-      defaultTheme='system'
-      storageKey='finsystem-theme'
-    >
-      {isLoginPage ? (
-        <Component {...pageProps} />
-      ) : (
-        <Layout>
+    <>
+      <Head>
+        <title>Prueba_Financiera</title>
+      </Head>
+      <ThemeProvider
+        attribute='class'
+        defaultTheme='system'
+        storageKey='finsystem-theme'
+      >
+        {isLoginPage ? (
           <Component {...pageProps} />
-        </Layout>
-      )}
-    </ThemeProvider>
+        ) : (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        )}
+      </ThemeProvider>
+    </>
   );
 };
 
